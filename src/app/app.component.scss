@@ -1,0 +1,8 @@
+$header-hight: 100px;
+.body, .bg-skyBlue{
+    background: linear-gradient(to right, rgb(86, 204, 242), rgb(47, 128, 237));
+    background-size: cover;
+}
+.home-page{
+    min-height: calc(100vh - #{$header-hight});
+}

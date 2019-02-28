@@ -1,0 +1,34 @@
+<div class="container-fluid">
+  <section class="main row">
+    <div class="col-md-6">
+      <div class="col-md-12">
+          <h4 *ngIf="weather">
+            {{weather.city.name}}, {{weather.city.country}}
+          </h4>
+      </div>   
+      <div class="col-md-12">
+        <p>
+          Population: {{weather.city.population}}
+        </p>
+      </div>     
+    </div>
+    <div class="col-md-6">
+      
+    </div>
+    
+  </section>
+  <section class="forcast row">
+    <div class="col-md-3 col-sm-6" *ngFor="let item of weather.list">
+        <div class="panel panel-default">
+          <div class="panel-heading">{{item.dt_txt| slice:0:16}}</div>
+          <div class="panel-body">
+            <p>Temp (Min):<strong>{{item.main.temp_min}}</strong></p>
+            <p>Temp (Max):<strong>{{item.main.temp_max}}</strong></p>
+            <p>Humidity:<strong>{{item.main.humidity}}</strong></p>
+            <img [src] = "'http://openweathermap.org/img/w/'+item.weather[0].icon+'.png'" />
+
+          </div>
+        </div>
+    </div>
+  </section>
+</div>
